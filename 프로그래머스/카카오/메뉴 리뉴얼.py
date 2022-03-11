@@ -13,4 +13,4 @@ def solution(orders, courses):
         answer.extend([''.join(key) for key, value in cnt.items() if value >= 2 and value == max_val])
     answer = sorted(answer)
     
-    return answer 
+    return answer
