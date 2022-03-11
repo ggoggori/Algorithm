@@ -25,7 +25,7 @@ def solution(context):
     answer = []
     if len(context)==1:
         return 1
-    
+     
     for length in range(1,int(len(context)/2)+1):
         answer.append(len(convert_str(context, length)))
         

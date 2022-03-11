@@ -15,4 +15,4 @@ def solution(sample):
         elif msg[0] == 'Leave':
             answer.append(f"{id_dict[msg[1]]}님이 나갔습니다.")
 
-    return answer
+    return answer 
