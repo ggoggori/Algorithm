@@ -14,3 +14,4 @@ def solution(orders, courses):
     answer = sorted(answer)
     
     return answer
+    
