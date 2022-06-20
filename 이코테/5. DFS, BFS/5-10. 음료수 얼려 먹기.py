@@ -28,7 +28,7 @@ def bfs(array, start):
         # 상하좌우로 가능한 좌표 찾기.
         for i, j in target:
             if not array[i][j]:
-                array[i][j] = 1
+                array[i][j] = 1  # 방문처리
                 queue.append((i, j))
     return array
 
