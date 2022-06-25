@@ -1,7 +1,11 @@
-x = int(input())
+n = int(input())
+dp = [0] * (n+1) # dp tabel 초기화
 
-dp = [0] * (x + 1)
-dp[0] = 0
-for n in range(1, x + 1):
-    dp[n] = dp[n-1] + 1
-    dp[n] = min(dp[n], dp[n // 2], dp[n // 3], dp[n // 5])
+for i in range(2,n+1): # 헷갈렸던게, 1에서 계산횟수가 1번인 줄 알았음. 이미 1이기 때문에 횟수 0번으로 1을 만들 수 있음. 그래서 2부터 시작.
+    dp[i] = dp[i-1] + 1
+    if i % 2 == 0:
+        dp[i] = min(dp[i], dp[i//2]+1)
+    elif i % 3 == 0:
+        dp[i] = min(dp[i], dp[i//3]+1)
+    elif i % 5 == 0:
+        dp[i] = min(dp[i], dp[i//5]+1)
