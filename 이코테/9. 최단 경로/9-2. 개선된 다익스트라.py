@@ -12,7 +12,6 @@ graph = [
     [(3, 1), (6, 2)],
     [],
 ]
-visited = [False] * (n + 1)
 distance = [INF] * (n + 1)
 
 
