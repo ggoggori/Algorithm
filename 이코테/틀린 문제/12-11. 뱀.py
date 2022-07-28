@@ -1,24 +1,22 @@
-# 푼 횟수 : v
-# 후기: 풀긴 했지만 코드가 지저분하고 test case를 맞추기 위해서 거기에 코드를 끼워 맞춘다는 느낌이 강하게 들었다.
+# 푼 횟수 : 
+# 후기: 코드가 지저분하고 test case를 맞추기 위해서 거기에 코드를 끼워 맞춘다는 느낌이 강하게 들었다.
 # 다음에는 효율적이고 보기 쉬운 코드로 작성해보려고 노력하자!
+# 맞은 줄 알았는데, 백준에 제출해보니 틀렸다!
 
-# Test 1
-n, k = 6, 3
-apples = [(3, 4), (2, 5), (5, 3)]
-l = 3
-XC = [(3, "D"), (15, "L"), (17, "D")]
+# input
+n = int(input())
+k = int(input())
 
-# Test 2
-n, k = 10, 4
-apples = [(1, 2), (1, 3), (1, 4), (1, 5)]
-l = 4
-XC = [(8, "D"), (10, "D"), (11, "D"), (13, "L")]
+apples = []
+for _ in range(k):
+    x, y = list(map(int, input().split()))
+    apples.append((x, y))
 
-# Test 3
-n, k = 10, 5
-apples = [(1, 5), (1, 3), (1, 2), (1, 6), (1, 7)]
-l = 4
-XC = [(8, "D"), (10, "D"), (11, "D"), (13, "L")]
+l = int(input())
+XC = []
+for _ in range(l):
+    x, c = input().split()
+    XC.append((int(x), c))
 
 ################################################################################################################
 from collections import deque
@@ -55,9 +53,8 @@ while True:
     elif array[cur_x][cur_y] == 0:
         array[cur_x][cur_y] = "s"
 
-    tracks = tracks[
-        -(length + 1) :
-    ]  # (length에 1을 더해준 이유는 뱀이 움직이는 순간에는 추적해야할 꼬리가 순간적으로 늘어나기 때문!) ,, 하지만 비효율적인 것 같다.
+    tracks = tracks[-(length + 1) :]
+    # (length에 1을 더해준 이유는 뱀이 움직이는 순간에는 추적해야할 꼬리가 순간적으로 늘어나기 때문!) ,, 하지만 비효율적인 것 같다.
 
     if (cur_x, cur_y) in tracks:
         break
@@ -74,7 +71,5 @@ while True:
         else:  # 왼쪽 회전
             dx.rotate(1)
             dy.rotate(1)
-
-    print((cur_x + 1, cur_y + 1), length, [(i[0] + 1, i[1] + 1) for i in tracks], count)
 
 print(count)
