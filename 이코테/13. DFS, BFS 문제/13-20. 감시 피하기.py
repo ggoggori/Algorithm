@@ -1,3 +1,5 @@
+# 푼 횟수: v
+
 from itertools import combinations
 import copy
 
