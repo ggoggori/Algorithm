@@ -1,3 +1,5 @@
+# 푼 횟수 : v
+
 from bisect import bisect_left, bisect_right
 
 array1 = [1, 1, 2, 2, 2, 2, 3]
