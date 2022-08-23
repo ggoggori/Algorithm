@@ -3,7 +3,7 @@ import heapq
 INF = int(1e9)
 n, m = 6, 11
 start = 1
-graph = [
+graph = [ #(노드,비용)
     [],
     [(2, 2), (3, 5), (4, 1)],
     [(3, 3), (4, 2)],
